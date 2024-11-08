@@ -1,0 +1,25 @@
+type Vector = 
+ record {
+   x: float64;
+   y: float64;
+   z: float64;
+ };
+type Position = 
+ record {
+   x: float64;
+   y: float64;
+   z: float64;
+ };
+type FieldVector = 
+ record {
+   field: Vector;
+   position: Position;
+ };
+type Charge = 
+ record {
+   position: Position;
+   strength: float64;
+ };
+service : {
+  calculateField: (Charge, Charge) -> (vec FieldVector);
+}

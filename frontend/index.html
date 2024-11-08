@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Electromagnetic Field Visualizer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 controls">
+                <h3>Field Controls</h3>
+                <div class="charge-controls">
+                    <h4>Charge 1</h4>
+                    <div class="mb-3">
+                        <label>Strength (C):</label>
+                        <input type="range" class="form-range" id="charge1Strength" min="-10" max="10" step="0.1" value="1">
+                        <span id="charge1StrengthValue">1.0</span>
+                    </div>
+                    <div class="mb-3">
+                        <label>X Position:</label>
+                        <input type="range" class="form-range" id="charge1X" min="-5" max="5" step="0.1" value="-2">
+                    </div>
+                    <div class="mb-3">
+                        <label>Y Position:</label>
+                        <input type="range" class="form-range" id="charge1Y" min="-5" max="5" step="0.1" value="0">
+                    </div>
+                    <div class="mb-3">
+                        <label>Z Position:</label>
+                        <input type="range" class="form-range" id="charge1Z" min="-5" max="5" step="0.1" value="0">
+                    </div>
+                </div>
+                <div class="charge-controls">
+                    <h4>Charge 2</h4>
+                    <div class="mb-3">
+                        <label>Strength (C):</label>
+                        <input type="range" class="form-range" id="charge2Strength" min="-10" max="10" step="0.1" value="-1">
+                        <span id="charge2StrengthValue">-1.0</span>
+                    </div>
+                    <div class="mb-3">
+                        <label>X Position:</label>
+                        <input type="range" class="form-range" id="charge2X" min="-5" max="5" step="0.1" value="2">
+                    </div>
+                    <div class="mb-3">
+                        <label>Y Position:</label>
+                        <input type="range" class="form-range" id="charge2Y" min="-5" max="5" step="0.1" value="0">
+                    </div>
+                    <div class="mb-3">
+                        <label>Z Position:</label>
+                        <input type="range" class="form-range" id="charge2Z" min="-5" max="5" step="0.1" value="0">
+                    </div>
+                </div>
+                <button id="updateField" class="btn btn-primary">Update Field</button>
+                <div id="loading" class="spinner-border text-primary d-none" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div id="canvas-container"></div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
